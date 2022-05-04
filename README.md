@@ -1,6 +1,8 @@
 # DuckDuck
 A async wrapper for the RandomDuck API
 
+[![PyPI](https://img.shields.io/pypi/v/duckduck)](https://pypi.org/project/duckduck/)
+
 ## INSTALLATION
 ```bash
 $python -m pip install DuckDuck
