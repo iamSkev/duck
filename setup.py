@@ -11,7 +11,7 @@ version = __import__("DuckDuck.__init__").__version__
 setup(
     name="DuckDuck",
     author="iamSkev",
-    author_email="iamSkev01@gmail.com",
+    author_email="shawnkenzov@gmail.com",
     url="https://github.com/iamSkev/duck",
     description="An async API wrapper for the Random-d.uk API",
     long_description=long_description(),
