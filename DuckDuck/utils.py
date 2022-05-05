@@ -25,7 +25,7 @@ async def _open_image(data: bytes) -> io.BytesIO:
     return img
 
 
-class CustomException(Exception):
+class BaseException(Exception):
     """
     The base exception class for all of the other exceptions.
     """
@@ -34,7 +34,7 @@ class CustomException(Exception):
         super().__init__(message)
 
 
-class FileNotUploaded(CustomException):
+class FileNotUploaded(BaseException):
     """
     Raised when there's a problem with uploading a file to the ``add`` endpoint.
     """
@@ -42,7 +42,7 @@ class FileNotUploaded(CustomException):
         super().__init__(message)
 
 
-class CouldNotConnect(CustomException):
+class CouldNotConnect(BaseException):
     """
     Raised when there's a problem with connecting to the API.
     """
@@ -51,7 +51,7 @@ class CouldNotConnect(CustomException):
         super().__init__(message)
 
 
-class NotFound(CustomException):
+class NotFound(BaseException):
     """
     Raised when API response status returns 404.
     """
