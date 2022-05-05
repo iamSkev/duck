@@ -18,6 +18,7 @@ setup(
     long_description_content_type="text/markdown",
     version=version,
     packages=find_packages(where=".", exclude=["tests"]),
+    license="MIT",
     keywords=["duck", "randomduck", "randomduk", "duckapi"],
     install_requires=[
         "aiofiles>=0.8.0",
@@ -25,7 +26,10 @@ setup(
     ],
     classifiers=[
         "Development Status :: 1 - Planning",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Software Development :: Libraries :: Python Modules",
     ],
 )
