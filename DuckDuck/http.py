@@ -26,7 +26,6 @@ class _HTTPClient:
         async with ClientSession().get(f"{self._BASEURL}{endpoint}{query}") as resp:
             if resp.status == 200:
                 if image:
-                    print(await resp.json())
                     return await resp.read()
 
                 return await resp.json()
