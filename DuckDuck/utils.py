@@ -11,7 +11,6 @@ __all__ = (
     "NotFound",
 )
 
-
 @dataclass
 class _DataDict:
     gif_count: int
@@ -22,18 +21,6 @@ class _DataDict:
 
 
 async def _open_image(data: bytes) -> io.BytesIO:
-    """_summary_
-
-    Parameters
-    ----------
-    data : bytes
-        _description_
-
-    Returns
-    -------
-    io.BytesIO
-        _description_
-    """
     img = io.BytesIO(data)
     return img
 
