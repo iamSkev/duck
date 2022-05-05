@@ -1,12 +1,5 @@
-# DuckDuck
-A async wrapper for the RandomDuck API
-
+# Getting Started
 [![PyPI](https://img.shields.io/pypi/v/duckduck)](https://pypi.org/project/duckduck/)
-
-## Features
-- An async library.
-- Has all of the endpoints covered in v2.
-- Has a object oriented design so it's easy to use.
 
 ## Installation
 ```bash
@@ -28,6 +21,3 @@ async def main():
 
 asyncio.run(main())
 ```
-
-## Support
-Contact me: [iamSkev#4260](https://discord.com/users/381799048228896788)

@@ -35,17 +35,26 @@ class CustomException(Exception):
 
 
 class FileNotUploaded(CustomException):
+    """
+    Raised when there's a problem with uploading a file to the ``add`` endpoint.
+    """
     def __init__(self, message: str) -> None:
         super().__init__(message)
 
 
 class CouldNotConnect(CustomException):
+    """
+    Raised when there's a problem with connecting to the API.
+    """
     def __init__(self, status: int) -> None:
         message = f"Could Not Connect to the API. Response status: {status}"
         super().__init__(message)
 
 
 class NotFound(CustomException):
+    """
+    Raised when API response status returns 404.
+    """
     def __init__(self) -> None:
         message = "404 not found"
         super().__init__(message)

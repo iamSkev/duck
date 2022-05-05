@@ -32,11 +32,14 @@ class Duck(_HTTPClient, _Cache):
 
         Parameters
         ----------
-        gif: :class:`Optional[bool]` Whether to fetch only gif from the API, default is set to ``False``.
-        jpg: :class:`Optional[bool]` Whether to fetch only jpg from the API, default is set to ``False``.
+        gif : :class:`Optional[bool]`
+            Whether to fetch only gif from the API, default is set to ``False``.
+        jpg : :class:`Optional[bool]`
+            Whether to fetch only jpg from the API, default is set to ``False``.
+
         Returns
         -------
-        :class: `str`
+        :class:`str`
         """
         if gif:
             data: str = (await self._request("random", query="?type=gif"))["url"]
@@ -74,9 +77,11 @@ class Duck(_HTTPClient, _Cache):
 
         Parameters
         ----------
-        gif:`Optional[bool]` Whether to fetch only gif from the API, default is set to ``False``.
+        gif: :class:`Optional[bool]`
+            Whether to fetch only gif from the API, default is set to ``False``.
 
-        jpg:`Optional[bool]` Whether to fetch only jpg from the API, default is set to ``False``.
+        jpg: :class:`Optional[bool]`
+            Whether to fetch only jpg from the API, default is set to ``False``.
 
         Returns
         -------
@@ -114,11 +119,14 @@ class Duck(_HTTPClient, _Cache):
 
         Parameters
         ----------
-        gif: :class:`Optional[bool]` Whether to only get the gif list of the dict.
+        gif: :class:`Optional[bool]`
+            Whether to only get the gif list of the dict.
 
-        jpg: :class:`Optional[bool]` Whether to only get the jpg list of the dict.
+        jpg: :class:`Optional[bool]`
+            Whether to only get the jpg list of the dict.
 
-        http: :class:`Optional[bool]` Whether to only get the http list of the dict.
+        http: :class:`Optional[bool]`
+            Whether to only get the http list of the dict.
 
         Returns
         -------
@@ -141,13 +149,14 @@ class Duck(_HTTPClient, _Cache):
 
         return data
 
-    async def fetch_jpg(self, jpg: str, /) -> io.BytesIO:
+    async def fetch_jpg(self, jpg: int, /) -> io.BytesIO:
         """
         Fetches a specified jpg from the API.
 
         Parameters
         ----------
-        jpg: :class:`str` The jpg to fetch.
+        jpg: :class:`int`
+            The jpg to fetch.
 
         Returns
         -------
@@ -162,13 +171,14 @@ class Duck(_HTTPClient, _Cache):
 
         return img
 
-    async def fetch_gif(self, gif: str, /) -> io.BytesIO:
+    async def fetch_gif(self, gif: int, /) -> io.BytesIO:
         """
         Fetches a specified gif from the API.
 
         Parameters
         ----------
-        gif: :class:`str` The gif to fetch.
+        gif: :class:`int`
+            The gif to fetch.
 
         Returns
         -------
@@ -183,13 +193,14 @@ class Duck(_HTTPClient, _Cache):
 
         return img
 
-    async def fetch_http(self, code: str, /) -> io.BytesIO:
+    async def fetch_http(self, code: int, /) -> io.BytesIO:
         """
         Fetches a specified http from the API.
 
         Parameters
         ----------
-        code: :class:`str` The http image to fetch
+        code: :class:`int`
+            The http image to fetch
 
         Returns
         -------
@@ -212,11 +223,12 @@ class Duck(_HTTPClient, _Cache):
 
         Parameters
         ----------
-        file: Union[:class:`str`, :class:`io.IOBase`, :class:`AsyncBufferedReader`] The file to upload
+        file: :class:`Union[str, io.IOBase, AsyncBufferedReader]`
+            The file to upload
 
         Returns
         -------
-        Optional[:class:`str`]
+        :class:`Optional[str]`
         """
         if isinstance(file, str):
             async with aiofiles.open(file, "rb") as f:
