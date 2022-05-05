@@ -1,6 +1,7 @@
 # DuckDuck
 A async wrapper for the RandomDuck API
 
+[![Documentation Status](https://readthedocs.org/projects/duckduck/badge/?version=latest)](https://duckduck.readthedocs.io/en/latest/?badge=latest)
 [![PyPI](https://img.shields.io/pypi/v/duckduck)](https://pypi.org/project/duckduck/)
 
 ## Features
