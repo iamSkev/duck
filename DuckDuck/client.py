@@ -24,6 +24,9 @@ class Duck(_HTTPClient, _Cache):
 
     def __str__(self) -> str:
         return "Quack"
+    
+    def __repr__(self) -> str:
+        return "Quack Quack"
 
     async def fetch_random(self, *, gif: bool = False, jpg: bool = False) -> str:
         """
@@ -43,25 +46,25 @@ class Duck(_HTTPClient, _Cache):
         """
         if gif:
             data: str = (await self._request("random", query="?type=gif"))["url"]
-            if self._cache.get("gifs") is None:
+            if not self._cache.get("gifs"):
                 self._cache["gifs"] = [data]
             else:
                 self._cache["gifs"].append(data)
         elif jpg:
             data = (await self._request("random", query="?type=jpg"))["url"]
-            if self._cache.get("jpgs") is None:
+            if not self._cache.get("jpgs"):
                 self._cache["jpgs"] = [data]
             else:
                 self._cache["jpgs"].append(data)
         else:
             data = (await self._request("random"))["url"]
             if "gif" in data:
-                if self._cache.get("gifs") is None:
+                if not self._cache.get("gifs"):
                     self._cache["gifs"] = [data]
                 else:
                     self._cache["gifs"].append(data)
             else:
-                if self._cache.get("jpgs") is None:
+                if not self._cache.get("jpgs"):
                     self._cache["jpgs"] = [data]
                 else:
                     self._cache["jpgs"].append(data)
@@ -91,19 +94,19 @@ class Duck(_HTTPClient, _Cache):
             data: bytes = await self._request(
                 "randomimg", query="?type=gif", image=True
             )
-            if self._cache.get("gifs") is None:
+            if not self._cache.get("gifs"):
                 self._cache["gifs"] = [data]
             else:
                 self._cache["gifs"].append(data)
         elif jpg:
             data = await self._request("randomimg", query="?type=jpg", image=True)
-            if self._cache.get("jpgs") is None:
+            if not self._cache.get("jpgs"):
                 self._cache["jpgs"] = [data]
             else:
                 self._cache["jpgs"].append(data)
         else:
             data = await self._request("randomimg", image=True)
-            if self._cache.get("random_images") is None:
+            if not self._cache.get("random_images"):
                 self._cache["random_images"] = [data]
             else:
                 self._cache["random_images"].append(data)
@@ -164,7 +167,7 @@ class Duck(_HTTPClient, _Cache):
         """
         data: bytes = await self._request(f"{jpg}.jpg", image=True)
         img = await _open_image(data)
-        if self._cache.get("jpgs") is None:
+        if not self._cache.get("jpgs"):
             self._cache["jpgs"] = [img]
         else:
             self._cache["jpgs"].append(img)
@@ -186,7 +189,7 @@ class Duck(_HTTPClient, _Cache):
         """
         data: bytes = await self._request(f"{gif}.gif", image=True)
         img = await _open_image(data)
-        if self._cache.get("gifs") is None:
+        if not self._cache.get("gifs"):
             self._cache["gifs"] = [img]
         else:
             self._cache["gifs"].append(img)
@@ -208,7 +211,7 @@ class Duck(_HTTPClient, _Cache):
         """
         data: bytes = await self._request(f"http/{code}", image=True)
         img: io.BytesIO = await _open_image(data)
-        if self._cache.get("https") is None:
+        if not self._cache.get("https"):
             self._cache["https"] = [img]
         else:
             self._cache["https"].append(img)
