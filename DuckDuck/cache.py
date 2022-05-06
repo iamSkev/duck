@@ -8,6 +8,9 @@ __all__ = ("_Cache",)
 class _Cache:
     def __init__(self) -> None:
         self._cache: dict[str, list[str | io.BytesIO | bytes]] = {}
+    
+    def __iter__(self) -> dict[str, list[str | io.BytesIO | bytes]]:
+        self._cache
 
     @property
     async def gif_cache(self) -> list[str | io.BytesIO | bytes] | None:
