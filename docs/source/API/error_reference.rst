@@ -6,7 +6,7 @@ Errors
 CustomException
 ----------------
 
-.. autoclass:: CustomException
+.. autoclass:: BaseException
 
 FileNotUploaded
 ---------------

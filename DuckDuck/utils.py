@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 __all__ = (
     "_DataDict",
-    "CustomException",
+    "BaseException",
     "FileNotUploaded",
     "CouldNotConnect",
     "NotFound",
